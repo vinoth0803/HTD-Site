@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage Customers{% endblock %}
+
+{% block content %}
+<div class="container my-5 main-content">
+    <h2>Manage Customers</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Product</th>
+                <th>Invoice ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through customers and display their details -->
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phone }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.product }}</td>
+                <td>{{ customer.invoice_id }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete_customer', customer_id=customer.id) }}" onsubmit="return confirm('Are you sure you want to delete this customer?');">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

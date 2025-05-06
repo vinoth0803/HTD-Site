@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTD - Get Sample</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="static/images/fasri_logo-removebg-preview.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/getsample.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="/static/images/fasri_logo-removebg-preview.png" alt="Logo" class="logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('get_products') }}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    <!-- Sample Request Form -->
+    <div class="container">
+            {% if messages %}
+                <div class="alert alert-dismissible fade show" role="alert">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        <h2>Get Your Milk Sample</h2>
+        <p>Get a Sample of our <span class="highlight">Fresh Cow Milk</span>, delivered to your Home anywhere in Chennai.</p>
+        <form method="POST" action="{{ url_for('get_sample') }}">
+            <div class="form-group">
+                <label for="phone" class="form-label">Enter Phone Number</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="With +91 and space prefix" required>
+            </div>
+            <button type="submit" class="btn btn-primary">GET OTP</button>
+        </form>
+        <p class="info-text">Our Samples are <span class="highlight">NOT FREE</span>.<br>
+        You will be charged ₹35 / 500ml and ₹70 / 1 Litre.</p>
+        <p class="info-text">Please wait till we forward your Sample to our Dealer near you, usually takes a few hours.</p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Fasri Milk Products</h3>
+                <p>Home Town Diary Milk's mission is to deliver fresh dairy products to your doorstep, supporting local farmers and ensuring top-quality milk, ghee, and other dairy essentials.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resource Pages</h3>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="text-light">Home</a></li>
+                    <li><a href="{{ url_for('get_products') }}" class="text-light">Products</a></li>
+                    <li><a href="{{ url_for('about') }}" class="text-light">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="text-light">Contact Us<span class="new">NEW</span></a></li>
+                    <li><a href="#" class="text-light">Customer Reviews <span class="new">NEW</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Know our Milk</h3>
+                <ul>
+                    <li><a href="{{ url_for('get_sample') }}" class="text-light">Get Sample</a></li>
+                    <li><a href="{{ url_for('gallery') }}" class="text-light">Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect with us</h3>
+                <div class="social-icons">
+                    <a href="https://wa.me/918122135486?text=Hello%20I%20am%20interested%20in%20your%20products!"><img src="/static/icons/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="https://www.facebook.com"><img src="/static/icons/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com"><img src="/static/icons/instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            &copy; 2025 Home Town Dairy Products. All rights reserved.
+        </div>
+    </footer>
+    >
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

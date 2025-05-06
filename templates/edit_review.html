@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Edit Review for {{ review.user_name }}</h2>
+    <form action="{{ url_for('edit_review', review_id=review_id) }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="user_name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="user_name" name="user_name" value="{{ review.get('user_name', '') }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating (1-5)</label>
+            <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" value="{{ review.get('rating', '') }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3" required>{{ review.get('comment', '') }}</textarea>
+        </div>
+        
+        <!-- Display current profile picture -->
+        {% if review.get('image_path') %}
+            <div class="mb-3">
+                <img src="{{ url_for('static', filename=review.image_path) }}" alt="{{ review.user_name }}'s Profile Picture" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+            </div>
+        {% endif %}
+        
+        <!-- File input for updating profile picture -->
+        <div class="mb-3">
+            <label for="reviewer_image" class="form-label">Update Reviewer Image</label>
+            <input type="file" class="form-control" id="reviewer_image" name="reviewer_image" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Review</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,413 @@
+/* General styling */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light background for better readability */
+    scroll-behavior: smooth;
+}
+#reviews .card {
+    padding: 20px;
+    border-radius: 8px;
+}
+#reviews .rating {
+    font-size: 1.2em;
+    color: #ffd700; /* Gold color for filled stars */
+}
+li {
+    color: black;
+}
+
+.update h5 {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .update {
+    position: absolute;
+    left: 3%;
+    top: 65%;
+  }
+  
+  .update span {
+    font-size: large;
+    font-weight: 300;
+  }
+.spinner-container {
+    position: absolute;
+    top: 32%; /* Center the spinner vertically */
+    transform: translateY(-70%); /* Adjust vertical centering */
+    white-space: nowrap;
+    left: 3%;
+    width: 60px; /* Spinner size */
+    height: 10px; /* Spinner size */
+  }
+  
+  .spinner {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    top: 10%;
+    animation: slide-up 3s infinite;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#products {
+     /* Light grey background */
+    padding: 3rem 0; /* Adjust top and bottom padding as needed */
+}
+
+.box-style {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* There is no standard 'line-clamp' property */
+
+
+
+.card {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1); /* Customize this value as needed */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    display: flex;                   /* Enable flexbox for the card */
+    flex-direction: column;         /* Allow stacking of children */
+    height: auto;
+}
+.card-body {
+    flex: 1 1 auto;                 /* Allow the body to grow and fill space */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover for effect */
+}
+
+  .light-grey-bg {
+    background-color: #ececec; /* Light grey color */
+}
+/* Navbar styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+    }
+    
+    .navbar-brand .logo {
+    height: 60px !important; /* Adjust logo size */
+    }
+    
+    .navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    margin-right: 30px !important;
+    color: #333 !important; /* Dark text for nav links */
+    font-weight: 550 !important;
+    padding: 0.75rem 1rem;
+    }
+    .navbar-nav .nav-link:last-child{
+    margin-right: 0;
+    }
+    .navbar-nav .nav-link::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition effect */
+    }
+    .navbar-nav .nav-link:hover::after{
+    width:100% ;
+    
+    }
+    .navbar-nav .nav-link:hover {
+    color: #007bff !important; /* Change color on hover */
+    }
+    
+.background-image {
+    background-image: url('/static/images/milk\ dummy\ banner.jpg');
+    background-size: cover; /* Adjusts the size of the background image */
+    background-position: center; /* Centers the image */
+    padding: 50px; /* Adds padding inside the div */
+    width: 100%;
+    height: auto;
+}
+.background-image a{
+    color: lightskyblue;
+}
+.getsample {
+    padding: 10px 40px; /* Adjusts the padding */
+    font-weight: 800; /* Makes the font bold */
+    margin-left: -90px; /* Ensures the margin on the left is set to 0 */
+    display: inline-block; /* Ensures the button behaves like an inline element */
+    margin-top: -20px;
+}
+.hero-title{
+    margin-left: -90px;
+    margin-top: -30px;
+}
+/* Section headings */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Adjust the size for better visibility */
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Container and text */
+.container {
+    padding: 2rem;
+    border-radius: 10px;
+    
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo-container img {
+    max-width: 100px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Adjust size for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+    .logo-container img {
+        max-width: 80px;
+    }
+    .hero-title {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+    
+    .spinner {
+        font-size: 1.5rem; /* Adjust spinner size */
+    }
+    
+    .getsample {
+        padding: 10px 15px; /* Smaller padding for buttons */
+    }
+}
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 60px; /* Space between content and footer */
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    padding: 0 10px;
+}
+
+.footer-section {
+    margin: 10px 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li span {
+    color: white;
+    font-size: 9px;
+    background-color: green;
+    padding: 1px 1px;
+    border-radius: 5px;
+    vertical-align: super;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-section .social-icons a img:hover {
+    transform: scale(1.1);
+}
+/* Specific fixes for the alignment issue */
+.footer-section.milk-infob, .footer-section.social {
+    display: inline-block;
+    width: 50%; /* Ensures both columns take up equal space */
+    vertical-align: top; /* Align them properly at the top */
+}
+
+.social-icons img {
+    margin-right: 10px;
+    width: 30px; /* Adjust width for better spacing */
+    transition: transform 0.3s ease;
+
+}
+
+/* Remove box shadow */
+.no-box-shadow {
+    box-shadow: none !important;
+}
+
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    background-color: #2c3e50;
+}
+
+#page-content-wrapper {
+    flex: 1;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    font-size: 20px;
+    text-align: center;
+}
+
+.bg-primary {
+    background-color: #3498db !important;
+}
+
+.bg-success {
+    background-color: #2ecc71 !important;
+}
+
+.bg-danger {
+    background-color: #e74c3c !important;
+}
+
+.bg-warning {
+    background-color: #f39c12 !important;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.card {
+    height: 250px; /* Set a fixed height for the card */
+    width: auto; /* Allow width to auto-adjust */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1; /* Makes sure the content takes available space */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.price {
+    white-space: nowrap; /* Ensure price remains in a single line */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;  /* Customize carousel control colors */
+    border-radius: 50%;
+}

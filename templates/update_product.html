@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+     <!-- Navbar Section -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="/static/images/fasri_logo-removebg-preview.png" alt="Logo" class="logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Milk Meter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Edit Product</h2>
+        <form method="POST" action="{{ url_for('update_product', product_id=product['id']) }}" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ product['name'] }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Product Price</label>
+                <input type="number" class="form-control" id="price" name="price" value="{{ product['price'] }}" required step="0.01" min="0">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Product Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required>{{ product['description'] }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Product Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+                {% if product['image_url'] %}
+                    <img src="{{ product['image_url'] }}" alt="Product Image" class="img-thumbnail mt-2" width="100">
+                {% else %}
+                    <p class="text-muted">No image available.</p>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </form>
+    </div>
+    
+ <!-- Footer Section -->
+ <footer class="bg-dark text-light  ">
+    <div class="container bg-dark no-box-shadow">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4 footer-section about">
+                <h3>About Fasri Milk Products</h3>
+                <p>Fasri Milk's mission is to deliver fresh dairy products to your doorstep, supporting local farmers and ensuring top-quality milk, ghee, and other dairy essentials.</p>
+            </div>
+            <!-- Resources Section -->
+            <div class="col-md-4 footer-section resources">
+                <h3>Resource Pages</h3>
+                <ul>
+                    <li><a href="#" class="text-light">Home</a></li>
+                    <li><a href="#" class="text-light">About Us</a></li>
+                    <li><a href="#" class="text-light">Products</a></li>
+                    <li><a href="#" class="text-light">Process</a></li>
+                    <li><a href="#" class="text-light">Recipes <span class="new">NEW</span></a></li>
+                    <li><a href="#" class="text-light">Customer Reviews <span class="new">NEW</span></a></li>
+                </ul>
+            </div>
+            <!-- Milk Info and Social Section -->
+            <div class="col-md-4">
+                <div class="row">
+                    <!-- Know our Milk Section -->
+                    <div class="col-6 footer-section milk-infob">
+                        <h3>Know our Milk</h3>
+                        <ul>
+                            <li><a href="#" class="text-light">Milk Meter</a></li>
+                            <li><a href="#" class="text-light">Areas we Serve</a></li>
+                        </ul>
+                    </div>
+                    <!-- Connect with us Section -->
+                    <div class="col-6 footer-section social">
+                        <h3>Connect with us</h3>
+                        <div class="social-icons">
+                            <a href="#"><img src="/static/icons/whatsapp.png" alt="WhatsApp" width="40px"></a>
+                            <a href="#"><img src="/static/icons/facebook.png" alt="Facebook" width="40px"></a>
+                            <a href="#"><img src="/static/icons/instagram.png" alt="Instagram" width="40px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

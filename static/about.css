@@ -1,0 +1,191 @@
+/* General styling */
+body {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light background for better readability */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+}
+
+.navbar-brand .logo {
+    height: 60px !important; /* Adjust logo size */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    margin-right: 30px !important;
+    color: #333; /* Dark text for nav links */
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+}
+.navbar-nav .nav-link:last-child{
+    margin-right: 0;
+}
+.navbar-nav .nav-link::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition effect */
+}
+.navbar-nav .nav-link:hover::after{
+    width:100% ;
+
+}
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Section headings */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+
+h1 {
+    
+    font-size: 2.5rem; /* Adjust the size for better visibility */
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Container and text */
+.container {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card-like shadow */
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo-container img {
+    max-width: 100px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Adjust size for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+    .logo-container img {
+        max-width: 80px;
+    }
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 60px; /* Add margin-top to create space between the content and footer */
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  
+  .footer-section {
+    width: 220px;
+    margin: 10px 0;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+  }
+  
+  .footer-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color:#aaa
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .footer-section ul li  span{
+    color: white;
+    font-size: 9px;
+    background-color: green;
+    padding: 1px 1px; /* Add padding for space around the text */
+    border-radius: 5px; /* Optional: rounded corners */
+    vertical-align: super;
+  }
+  .footer-section ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .no-box-shadow {
+    box-shadow: none !important;
+}

@@ -1,0 +1,220 @@
+/* General styling */
+body {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light background for readability */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand .logo {
+    height: 60px !important; /* Adjust logo size */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    margin-right: 30px !important;
+    color: #333; /* Dark text */
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+}
+.navbar-nav .nav-link:last-child {
+    margin-right: 0;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #05739e; /* Underline color */
+    transition: width 0.3s ease; /* Smooth underline transition */
+}
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+.navbar-nav .nav-link:hover {
+    color: #007bff; /* Link color on hover */
+}
+
+/* Section headings */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Centered OTP container styling */
+.otp-container {
+    width: 500px; /* Set a fixed width for compact look */
+    margin: 50px auto; /* Center the container */
+    padding: 70px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 400px;
+}
+
+/* Heading styling */
+.otp-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Label styling */
+.otp-container label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* OTP input styling */
+.otp-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.verify-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.verify-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Form styling */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.form-group input {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-section {
+    width: 220px;
+    margin: 10px 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-section ul li span {
+    color: white;
+    font-size: 9px;
+    background-color: green;
+    padding: 1px 1px;
+    border-radius: 5px;
+    vertical-align: super;
+}
+.footer-section ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Social media icons */
+.social-icons a img {
+    width: 40px;
+    margin-right: 10px;
+}
+.no-box-shadow {
+    box-shadow: none !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .footer-section {
+        width: 100%; /* Full width in smaller screens */
+        text-align: center;
+    }
+}

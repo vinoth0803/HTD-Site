@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - {{ customer_info.invoice_id }}</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <p>Invoice ID: {{ customer_info.invoice_id }}</p>
+    <p>Name: {{ customer_info.name }}</p>
+    <p>Email: {{ customer_info.email }}</p>
+    <p>Phone: {{ customer_info.phone }}</p>
+    <p>Address: {{ customer_info.address }}</p>
+
+    <h2>Product Details</h2>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Subtotal (₹)</th>
+        </tr>
+        <tr>
+            <td>{{ customer_info.product }}</td>
+            <td>{{ customer_info.quantity }}</td>
+            <td>{{ customer_info.price | default(0) / 100 }}</td>
+            <td>{{ customer_info.subtotal / 100 }}</td>
+        </tr>
+    </table>
+
+    <h3>Total: ₹{{ customer_info.subtotal / 100 }}</h3>
+</body>
+</html>

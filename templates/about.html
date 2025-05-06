@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTD's - About</title>
+    <link rel="stylesheet" href="/static/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="static/images/fasri_logo-removebg-preview.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="/static/images/fasri_logo-removebg-preview.png" alt="Logo" class="logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('get_products') }}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    <!-- About Section -->
+    <div class="container mt-5 no-box-shadow ">
+        <h1 class="text-center">About Hometown Diary</h1>
+
+        <section class="mb-5">
+            <h2>Hometown Diary's Overview</h2>
+            <p>
+                Hometown Diary is a 4 years 1 month old enterprise incorporated on 05-Mar-2021, with its registered office located at No.15/89B, Sunrise Avenue, Keelathirukazhukundram, Lakeview Road, Thirukazhukundram, Tamil Nadu.
+                Our major activity lies in Manufacturing, sub-classified under the Manufacture of food products, primarily focused on the production of pasteurized milk — plain and flavored — delivered in eco-friendly packs and bottles.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Hometown Diary's Vision</h2>
+            <p>
+                At Hometown Diary, our core vision is to bridge the gap between small-scale local farmers and health-conscious consumers by offering natural, farm-fresh dairy products. We dream of kicking commercialization to the curb, delivering pure, preservative-free dairy goodness that's sustainable, affordable, and super fresh, straight from the heart of the farms.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Hometown Diary's History</h2>
+            <p>
+                Founded on March 5, 2021, Hometown Diary started its journey with a simple idea — to serve wholesome dairy to the community while uplifting the lives of local farmers in Tamil Nadu and beyond.
+                From a humble beginning, we’ve grown into one of the fastest-rising names in the dairy industry.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <p>
+                Every day, we hustle hard to deliver quality that you can literally taste — while keeping our roots grounded in tradition and care.
+            </p>
+            <ul>
+                <li>120+ customers served fresh every single day</li> 
+                <li>750 liters of milk sourced daily from passionate local farmers</li> 
+                <li>Over 200 dairy farmers empowered and supported</li>
+                <li>25+ neighborhoods across Chennai and surrounding towns served</li> 
+                <li>Entrepreneurship wave: Dealers and small business partners emerging from within the community</li>
+                <li>Support and uplift over 150 farmers through direct partnerships</li>
+                <li>Launch new initiatives to strengthen the farming community with modern solutions</li>
+            </ul>
+        </section>
+    
+    </div>
+<!-- Footer Section -->
+<footer class="bg-dark text-light  ">
+    <div class="container bg-dark no-box-shadow">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4 footer-section about">
+                <h3>About Home Town Dairy Products</h3>
+                <p>HTD Milk's mission is to deliver fresh dairy products to your doorstep, supporting local farmers and ensuring top-quality milk, ghee, and other dairy essentials.</p>
+            </div>
+            <!-- Resources Section -->
+            <div class="col-md-4 footer-section resources">
+                <h3>Resource Pages</h3>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="text-light">Home</a></li>
+                    <li><a href="{{ url_for('get_products') }}" class="text-light">Products</a></li>
+                    <li><a href="{{ url_for('about') }}" class="text-light">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="text-light">Contact Us<span class="new">NEW</span></a></li>
+                    <li><a href="#" class="text-light">Customer Reviews <span class="new">NEW</span></a></li>
+                </ul>
+            </div>
+            <!-- Milk Info and Social Section -->
+            <div class="col-md-4">
+                <div class="row">
+                    <!-- Know our Milk Section -->
+                    <div class="col-6 footer-section milk-infob">
+                        <h3>Know our Milk</h3>
+                        <ul>
+                            <li><a href="{{ url_for('get_sample') }}" class="text-light">Get Sample</a></li>
+                            <li><a href="{{ url_for('gallery') }}" class="text-light">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <!-- Connect with us Section -->
+                    <div class="col-6 footer-section social">
+                        <h3>Connect with us</h3>
+                        <div class="social-icons">
+                            <a href="https://wa.me/918122135486?text=Hello%20I%20am%20interested%20in%20your%20products!" target="_blank"><img src="/static/icons/whatsapp.png" alt="WhatsApp" width="40px"></a>
+                            <a href="https://www.facebook.com"><img src="/static/icons/facebook.png" alt="Facebook" width="40px"></a>
+                            <a href="https://www.instagram.com"><img src="/static/icons/instagram.png" alt="Instagram" width="40px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <p class="mb-0">&copy; 2024 FASRI Foods And Dairy Products. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/script.js" type="text/javascript"></script>
+</body>
+</html>

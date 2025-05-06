@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/about.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> <!-- Add Bootstrap Icons CDN -->
+    <title>Payment Successful</title>
+    <style>
+
+        .success-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .success-icon {
+            font-size: 50px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #f8f9fa;
+        }
+        .btn-primary {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="/static/images/fasri_logo-removebg-preview.png" alt="Logo" class="logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('get_products') }}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('gallery') }}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="bi bi-check-circle-fill"></i> <!-- Bootstrap icon for green tick -->
+        </div>
+        <h2>Payment Successful</h2>
+        <p>Thank you for your purchase!</p>
+        <p>Your Order has been placed!Kindly download your invoice!</p>
+        <form action="{{ url_for('generate_invoice') }}" method="POST">
+            <input type="hidden" name="name" value="{{ customer_info['name'] }}">
+            <input type="hidden" name="email" value="{{ customer_info['email'] }}">
+            <input type="hidden" name="phone" value="{{ customer_info['phone'] }}">
+            <input type="hidden" name="address" value="{{ customer_info['address'] }}">
+            <input type="hidden" name="product" value="{{ customer_info['product'] }}">
+            <button type="submit" class="btn btn-primary">Download Invoice</button>
+        </form>
+    </div>
+    <footer class="bg-dark text-light  ">
+        <div class="container bg-dark no-box-shadow">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4 footer-section about">
+                    <h3>About Home Town Dairy Products</h3>
+                    <p>HTD Milk's mission is to deliver fresh dairy products to your doorstep, supporting local farmers and ensuring top-quality milk, ghee, and other dairy essentials.</p>
+                </div>
+                <!-- Resources Section -->
+                <div class="col-md-4 footer-section resources">
+                    <h3>Resource Pages</h3>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}" class="text-light">Home</a></li>
+                        <li><a href="{{ url_for('get_products') }}" class="text-light">Products</a></li>
+                        <li><a href="{{ url_for('about') }}" class="text-light">About Us</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="text-light">Contact Us<span class="new">NEW</span></a></li>
+                        <li><a href="#" class="text-light">Customer Reviews <span class="new">NEW</span></a></li>
+                    </ul>
+                </div>
+                <!-- Milk Info and Social Section -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <!-- Know our Milk Section -->
+                        <div class="col-6 footer-section milk-infob">
+                            <h3>Know our Milk</h3>
+                            <ul>
+                                <li><a href="{{ url_for('get_sample') }}" class="text-light">Get Sample</a></li>
+                                <li><a href="{{ url_for('gallery') }}" class="text-light">Gallery</a></li>
+                            </ul>
+                        </div>
+                        <!-- Connect with us Section -->
+                        <div class="col-6 footer-section social">
+                            <h3>Connect with us</h3>
+                            <div class="social-icons">
+                                <a href="https://wa.me/918122135486?text=Hello%20I%20am%20interested%20in%20your%20products!" target="_blank"><img src="/static/icons/whatsapp.png" alt="WhatsApp" width="40px"></a>
+                                <a href="https://www.facebook.com"><img src="/static/icons/facebook.png" alt="Facebook" width="40px"></a>
+                                <a href="https://www.instagram.com"><img src="/static/icons/instagram.png" alt="Instagram" width="40px"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2025 Home Town Dairy Products. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
