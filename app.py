@@ -32,11 +32,12 @@ app.secret_key = 'your_secret_key_here'  # Set a secret key for session manageme
 otp_store = {}
 
 account_sid = os.getenv('TWILIO_ACCOUNT_SID')  # Fetches Twilio Account SID
-auth_token = os.getenv('TWILIO_AUTH_TOKEN')      # Fetches Twilio Auth Token
+api_key_sid = os.getenv("TWILIO_API_KEY_SID")
+api_key_secret = os.getenv("TWILIO_API_KEY_SECRET")
 twilio_phone_number = os.getenv('TWILIO_PHONE_NUMBER')  # Fetches Twilio phone number
 
 # Create a Twilio client
-twilio_client = Client(account_sid, auth_token)
+twilio_client = Client(api_key_sid, api_key_secret, account_sid)
 
 # FAST2SMS_API_KEY = os.getenv('FAST2SMS_API_KEY')  # Make sure to set your Fast2SMS API Key
 
